@@ -61,7 +61,10 @@ class User {
 			if (updateUserInputData[head.key])
 				user[head.key] = updateUserInputData[head.key];
 		});
-		usersData[userIndex] = user;
+		usersData[userIndex] = {
+			...user,
+			status: user.status === "true" ? true : false,
+		};
 		deal.writeToJson(usersData);
 	}
 	static del(id) {
