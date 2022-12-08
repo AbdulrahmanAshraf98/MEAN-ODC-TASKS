@@ -1,0 +1,7 @@
+create Routes 
+    User Routes 
+create Controller
+    User controller
+create Views
+
+statics files
