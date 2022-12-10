@@ -1,0 +1,27 @@
+{{>header}}
+{{>navbar}}
+<section class="my-5 container">
+    <form method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Book Title</label>
+            <input class="form-control" name="title" placeholder="{{book.title}}" type="text" value="{{title}}">
+        </div>
+        <div class="mb-3">
+             <label for="title" class="form-label">Book Author</label>
+            <input class="form-control" name="bookAuthor" placeholder="{{book.bookAuthor}}" type="text" value="{{bookAuthor}}">
+        </div>
+           <div class="mb-3">
+             <label for="title" class="form-label">Book Category</label>
+            <input class="form-control" name="bookCategory" placeholder="{{book.bookCategory}}" type="text" value="{{bookCategory}}">
+        </div>
+        </div>
+           <div class="mb-3">
+             <label for="title" class="form-label">Total Book Pages</label>
+            <input class="form-control" name="bookPages" placeholder="{{book.bookPages}}" type="number" value="{{bookPages}}">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Update Book</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

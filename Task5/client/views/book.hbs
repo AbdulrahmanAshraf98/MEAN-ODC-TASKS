@@ -1,0 +1,17 @@
+{{>header}}
+{{>navbar}}
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">{{book.title}}</h5>
+    <p class="card-text">{{book.bookAuthor}}</p>
+    <div class="d-flex">
+      <p>{{book.bookCategory}}</p>
+      <p>{{book.bookPages}}</p>
+    </div>
+    <div class="d-flex">
+       <a href="/updateBook/{{book.id}}" class="btn btn-primary">updateBook</a>
+       <a href="/deleteBook/{{book.id}}" class="btn btn-primary">delete</a>
+    </div>
+  </div>
+</div>
+{{>footer}}

@@ -1,0 +1,24 @@
+{{>header}}
+{{>navbar}}
+
+<section class="px-4 py-4">
+    <div class="container text-center">
+        <div class="row mb-4">
+            <form>   
+            <input class="form-check-input mb-2" type="radio" id="title-asc" name="sortBy" value="title-asc">
+            <label class="form-check-label" for="title-asc">title asc</label><br>
+            <input class="form-check-input  mb-2" type="radio" id="title-desc" name="sortBy" value="title-desc">
+            <label class="form-check-label" for="title-desc">title desc</label><br>
+            <input class="form-check-input  mb-2" type="radio" id="pagesNumber-asc" name="sortBy" value="pagesNumber-asc">
+            <label  lass="form-check-label"for="pagesNumber-asc">pagesNumber asc</label><br>
+            <input class="form-check-input mb-2"  type="radio" id="pagesNumber-desc" name="sortBy" value="pagesNumber-desc">
+            <label class="form-check-label" for="pagesNumber-desc">pagesNumber desc</label><br>
+            <button class="btn btn-primary">sortBy</button>
+            </form>
+    
+        </div>
+    </div>
+    {{>books}}
+</section>
+
+{{>footer}}
