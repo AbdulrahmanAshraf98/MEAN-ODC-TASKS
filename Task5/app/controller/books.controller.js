@@ -98,14 +98,13 @@ class BooksController {
 	static searchForBook = (req, res) => {
 		const { query } = req.query;
 		let books = DealWithFileSystem.readFromFile(booksJsonPath);
-
-		const book = DealWithArray.searchForStringInArray(
+		books = DealWithArray.searchForStringInArray(
 			books,
 			query,
 			"arrayOfObject",
 			"title",
 		);
-		res.status(200).render("home", { books: [book] });
+		res.status(200).render("home", { books });
 	};
 	static checkIdParams = (req, res, next) => {
 		const id = req.params.id;

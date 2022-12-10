@@ -48,12 +48,11 @@ const searchForStringInArray = (
 	key = "",
 ) => {
 	if (typeOFArray === "arrayOfObject")
-		return array.find(
-			(element) =>
-				element[key].trim().toLowerCase() === value.trim().toLowerCase(),
+		return array.filter((element) =>
+			element[key].trim().toLowerCase().includes(value.trim().toLowerCase()),
 		);
-	return array.find(
-		(element) => element.trim().toLowerCase() === value.trim().toLowerCase(),
+	return array.filter((element) =>
+		element.trim().toLowerCase().includes(value.trim().toLowerCase()),
 	);
 };
 
