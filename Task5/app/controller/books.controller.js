@@ -42,10 +42,10 @@ class BooksController {
 		let sortedBy = req.query.sortBy;
 		let books = DealWithFileSystem.readFromFile(booksJsonPath);
 		books = sortBy(books, sortedBy);
-		res.status(200).render("home", { books, sortedBy });
+		res.status(200).render("home", { pageTitle: "Home", books, sortedBy });
 	};
 	static addBook = (req, res) => {
-		res.status(200).render("addbook");
+		res.status(200).render("addbook", { pageTitle: "add Book" });
 	};
 	static addBookLogic = (req, res) => {
 		let book;
@@ -54,7 +54,7 @@ class BooksController {
 		const books = DealWithFileSystem.readFromFile(booksJsonPath);
 		books.push(book);
 		DealWithFileSystem.writeToFile(booksJsonPath, books);
-		res.status(200).render("addbook");
+		res.status(200).render("addbook", { pageTitle: "add Book" });
 	};
 	static getBook = (req, res) => {
 		const id = req.params.id;
@@ -62,13 +62,13 @@ class BooksController {
 		const book = DealWithArray.getElementBy(books, "id", +id);
 		if (!book)
 			res.render("error", { pageTitle: "invalid", err: "book not found" });
-		res.status(200).render("book", { book });
+		res.status(200).render("book", { pageTitle: "book", book });
 	};
 	static updateBook = (req, res) => {
 		const id = req.params.id;
 		const books = DealWithFileSystem.readFromFile(booksJsonPath);
 		const book = DealWithArray.getElementBy(books, "id", +id);
-		res.status(200).render("updatebook", { book });
+		res.status(200).render("updatebook", { pageTitle: "update book", book });
 	};
 
 	static updateBookLogic = (req, res) => {
@@ -104,7 +104,7 @@ class BooksController {
 			"arrayOfObject",
 			"title",
 		);
-		res.status(200).render("home", { books });
+		res.status(200).render("home", { pageTitle: "home", books });
 	};
 	static checkIdParams = (req, res, next) => {
 		const id = req.params.id;

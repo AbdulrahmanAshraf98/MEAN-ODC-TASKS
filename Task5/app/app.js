@@ -9,4 +9,10 @@ app.set("views", path.join(__dirname, "../client/views"));
 hbs.registerPartials(path.join(__dirname, "../client/layouts"));
 app.use(express.urlencoded({ extended: true }));
 app.use(booksRoutes);
+app.all("*", (req, res) => {
+	res.render("error", {
+		pageTitle: "Page Not Found",
+		err: "invalid url please try again",
+	});
+});
 module.exports = app;
